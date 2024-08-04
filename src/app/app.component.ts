@@ -1,16 +1,11 @@
 import { CommonModule, NgFor, NgForOf } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import {
-  addDoc,
-  collection,
-  collectionData,
-  CollectionReference,
-  DocumentReference,
-  Firestore,
-} from '@angular/fire/firestore';
+import { Component, inject, OnDestroy } from '@angular/core';
+import { Auth, User, user } from '@angular/fire/auth';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { addDoc, collection, collectionData, CollectionReference, DocumentReference, Firestore } from '@angular/fire/firestore';
 import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 interface Item {
   name: string;
@@ -63,3 +58,5 @@ export class AppComponent {
     );
   }
 }
+
+
