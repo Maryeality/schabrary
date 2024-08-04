@@ -4,8 +4,9 @@ import { Auth, User, user } from '@angular/fire/auth';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { addDoc, collection, collectionData, CollectionReference, DocumentReference, Firestore } from '@angular/fire/firestore';
 import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterModule } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
+import { HomeComponent } from './home/home.component';
 
 interface Item {
   name: string;
@@ -16,10 +17,12 @@ interface Item {
   standalone: true,
   imports: [
     RouterOutlet,
+    RouterModule,
     NgForOf,
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
+    HomeComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

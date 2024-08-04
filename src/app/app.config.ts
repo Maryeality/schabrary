@@ -1,11 +1,11 @@
 import { ApplicationConfig, provideZoneChangeDetection, inject, PLATFORM_ID } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { routes } from './app.routes';
 import { initializeApp, provideFirebaseApp, initializeServerApp} from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { isPlatformBrowser } from '@angular/common';
+import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
