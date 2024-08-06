@@ -7,6 +7,7 @@ import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { HomeComponent } from './home/home.component';
+import { HochladenComponent } from './hochladen/hochladen.component';
 
 interface Item {
   name: string;
@@ -15,21 +16,14 @@ interface Item {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterOutlet,
-    RouterModule,
-    NgForOf,
-    CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
-    HomeComponent
-  ],
+  imports: [ RouterOutlet, RouterModule, NgForOf, CommonModule, ReactiveFormsModule, FormsModule, HomeComponent, HochladenComponent ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
+
 export class AppComponent {
   title = 'schabrary';
-  item$: Observable<Item[]>;
+  /*item$: Observable<Item[]>;
   firestore: Firestore = inject(Firestore);
   itemCollection: CollectionReference;
   tempName: string = '';
@@ -59,7 +53,7 @@ export class AppComponent {
     addDoc(this.itemCollection, <Item>{ name }).then(
       (DocumentReference: DocumentReference) => {}
     );
-  }
+  }*/
 }
 
 
