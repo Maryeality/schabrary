@@ -1,7 +1,5 @@
 import { CommonModule, NgFor, NgForOf } from '@angular/common';
 import { Component, inject, OnDestroy } from '@angular/core';
-import { Auth, User, user } from '@angular/fire/auth';
-import { getAuth, provideAuth } from '@angular/fire/auth';
 import { addDoc, collection, collectionData, CollectionReference, DocumentReference, Firestore } from '@angular/fire/firestore';
 import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import { RouterOutlet, RouterModule } from '@angular/router';
@@ -49,6 +47,8 @@ export class HochladenComponent {
     }
     addItem(name: string) {
       if (!name) return;
+
+      console.log(name)
   
       addDoc(this.itemCollection, <Item>{ name }).then(
         (DocumentReference: DocumentReference) => {}

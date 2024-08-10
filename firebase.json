@@ -1,7 +1,6 @@
 {
   "hosting": {
-    "public": "public",
-    "target": "schabrary",
+    "public": "dist/schabrary/browser",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {

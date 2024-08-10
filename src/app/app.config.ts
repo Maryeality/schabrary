@@ -10,8 +10,5 @@ import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes), 
-    provideFirebaseApp(() => initializeApp({"projectId":"schabrary","appId":"1:1079364688244:web:2577b42754b40d43f2b421","storageBucket":"schabrary.appspot.com","apiKey":"AIzaSyDTeJGg-wysbToGbc-GwoE7bu0AiRp2vrI","authDomain":"schabrary.firebaseapp.com","messagingSenderId":"1079364688244"})), 
-    provideAuth(() => getAuth()), 
-    provideFirestore(() => getFirestore()), 
-    provideStorage(() => getStorage())], 
+    provideFirebaseApp(() => initializeApp({"projectId":"schbrary","appId":"1:1079364688244:web:2577b42754b40d43f2b421","storageBucket":"schbrary.appspot.com","apiKey":"AIzaSyDTeJGg-wysbToGbc-GwoE7bu0AiRp2vrI","authDomain":"schbrary.firebaseapp.com","messagingSenderId":"1079364688244"})), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideStorage(() => getStorage())]
 };
