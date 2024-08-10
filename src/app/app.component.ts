@@ -9,10 +9,10 @@ import { Observable, Subscription } from 'rxjs';
 import { HomeComponent } from './home/home.component';
 import { HochladenComponent } from './hochladen/hochladen.component';
 
-interface Item {
+/*interface Item {
   name: string;
 }
-
+*/
 @Component({
   selector: 'app-root',
   standalone: true,
