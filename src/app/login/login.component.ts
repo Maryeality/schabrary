@@ -1,7 +1,9 @@
 import { Component, inject } from '@angular/core';
 import {
   Auth,
+  getAuth,
   GoogleAuthProvider,
+  signInWithEmailAndPassword,
   signInWithRedirect,
   user,
   User,
@@ -29,5 +31,9 @@ export class LoginComponent {
 
   loginWithGoogle() {
     signInWithRedirect(this.auth, new GoogleAuthProvider());
+  }
+
+  loginWithEmail() {
+    signInWithEmailAndPassword(this.auth, email, password);
   }
 }
