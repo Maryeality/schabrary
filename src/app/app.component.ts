@@ -2,7 +2,14 @@ import { CommonModule, NgFor, NgForOf } from '@angular/common';
 import { Component, inject, OnDestroy } from '@angular/core';
 import { Auth, User, user } from '@angular/fire/auth';
 import { getAuth, provideAuth } from '@angular/fire/auth';
-import { addDoc, collection, collectionData, CollectionReference, DocumentReference, Firestore } from '@angular/fire/firestore';
+import {
+  addDoc,
+  collection,
+  collectionData,
+  CollectionReference,
+  DocumentReference,
+  Firestore,
+} from '@angular/fire/firestore';
 import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
@@ -16,11 +23,19 @@ import { HochladenComponent } from './hochladen/hochladen.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ RouterOutlet, RouterModule, NgForOf, CommonModule, ReactiveFormsModule, FormsModule, HomeComponent, HochladenComponent ],
+  imports: [
+    RouterOutlet,
+    RouterModule,
+    NgForOf,
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HomeComponent,
+    HochladenComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-
 export class AppComponent {
   title = 'schabrary';
   /*item$: Observable<Item[]>;
@@ -55,5 +70,3 @@ export class AppComponent {
     );
   }*/
 }
-
-
