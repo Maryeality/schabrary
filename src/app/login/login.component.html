@@ -1,3 +1,19 @@
 <p>Login Methoden:</p>
+
 <button (click)="loginWithGoogle()">Mit Google anmelden</button>
+<br />
+<p></p>
 <button (click)="loginWithEmail()">Mit E-Mail anmelden</button>
+<br />
+<input type="email" [(ngModel)]="email" placeholder="E-Mail" />
+<input type="password" [(ngModel)]="password" placeholder="Passwort" />
+<br />
+<p></p>
+<button (click)="registerWithEmail()">Registrieren mit E-Mail</button>
+
+<nav>
+  <div id="test">
+    <a href="/home">Home</a>
+  </div>
+</nav>
+<router-outlet></router-outlet>

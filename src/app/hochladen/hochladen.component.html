@@ -1,9 +1,14 @@
 <ul>
-    <li *ngFor="let item of item$ | async">
-      {{ item.name }}
-    </li>
-  </ul>
-  <input [(ngModel)]="tempName" type="text" (keypress)="pressEnter($event)" />
-  <button (click)="buttonClick()">hochladen</button>
-  
+  <li *ngFor="let item of item$ | async">
+    {{ item.name }}
+  </li>
+</ul>
+<input [(ngModel)]="tempName" type="text" (keypress)="pressEnter($event)" />
+<button (click)="buttonClick()">hochladen</button>
+
+<nav>
+  <div id="test">
+    <a href="/home">Home</a>
+  </div>
+</nav>
 <router-outlet></router-outlet>
