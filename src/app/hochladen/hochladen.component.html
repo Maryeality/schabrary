@@ -3,7 +3,7 @@
     {{ item.name }}
   </li>
 </ul>
-<input [(ngModel)]="tempName" type="text" (keypress)="pressEnter($event)" />
+<input type="text" [(ngModel)]="tempName" (keypress)="pressEnter($event)" />
 <button (click)="buttonClick()">hochladen</button>
 
 <nav>
