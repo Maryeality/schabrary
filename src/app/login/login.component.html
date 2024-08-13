@@ -2,13 +2,10 @@
 
 <button (click)="loginWithGoogle()">Mit Google anmelden</button>
 <br />
-<br />
-<input type="email" [(ngModel)]="email" placeholder="E-Mail" />
-<input type="password" [(ngModel)]="password" placeholder="Passwort" />
-<br />
+
 <button (click)="loginWithEmail()">Mit E-Mail anmelden</button>
-<p></p>
 <button (click)="registerWithEmail()">Registrieren mit E-Mail</button>
+<button mat-button (click)="openDialog()">Mit Email button</button>
 
 <nav>
   <div id="test">

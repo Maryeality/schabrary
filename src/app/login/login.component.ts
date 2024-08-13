@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import {
   Auth,
   createUserWithEmailAndPassword,
-  getAuth,
   GoogleAuthProvider,
   signInWithEmailAndPassword,
   signInWithRedirect,
@@ -10,14 +9,15 @@ import {
   User,
 } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterOutlet } from '@angular/router';
-import { Observable } from 'rxjs';
+import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
+import { MatDialog } from '@angular/material/dialog';
+import { PopupComponent } from '../popup/popup.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, RouterOutlet, HomeComponent],
+  imports: [FormsModule, RouterOutlet, HomeComponent, PopupComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
@@ -26,12 +26,33 @@ export class LoginComponent {
   user$ = user(this.auth);
   email: string = '';
   password: string = '';
+  private isPopupOpened = false;
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
     this.user$.subscribe((aUser: User | null) => {
       if (!aUser) console.log('Nutzer ist nicht angemeldet');
       else console.log('User', aUser.email);
     });
+  }
+
+  openDialog() {
+    if (!this.isPopupOpened) {
+      const dialogRef = this.dialog.open(PopupComponent, {
+        data: {
+          email: this.email,
+          password: this.password,
+        },
+      });
+
+      dialogRef.afterClosed().subscribe((result) => {
+        if (result) {
+          this.email = result.email;
+          this.password = result.password;
+        }
+        this.isPopupOpened = false;
+      });
+      this.isPopupOpened = true;
+    }
   }
 
   loginWithGoogle() {
